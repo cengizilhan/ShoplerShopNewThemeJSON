@@ -1,0 +1,317 @@
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../assets/Proxima-Nova-.ttf") format("truetype");
+}
+
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --textColorBlack:#22262A;
+  --textColorBlue:#33A0FF;
+  --FontColor1:#FAFAFB;
+  --FontColor2:#F6F7F8;
+  --FontColor3:#F1F3F4;
+  --FontColor4:#E5E8EA;
+  --FontColor5:#C1C8CE;
+  --FontColor6:#22262A;
+  --FontColor7:#33A0FF;
+  --FontColor8:#2E90E5;
+  --FontColor9:#2678BF;
+  --FontColor10:#19507F;
+  --FontColor11:#0D2840;
+  --FontColor12:#FF6875;
+  --FontColor13:#FF4252;
+  --FontColor14:#FF4858;
+  --FontColor15:#9E7AFF;
+  --FontColor16:#8F65FF;
+  --FontColor17:#0AD00A;
+  --FontColor18:#FFC600;
+  
+  
+}
+
+a {
+  text-decoration: none;
+  color:#262626;
+}
+body {
+  font-family: "Proxima Nova", sans-serif;
+}
+h1 {
+  font-size: 56px;
+  
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 36px;
+}
+h4 {
+  font-size: 30px;
+}
+h5 {
+    font-size:24px;
+}
+h6{
+    font-size:18px;
+
+}
+.LanguageDiv a {
+  color:#707070;
+}
+.TopRightBar i {
+  font-size:16px;
+  font-weight: bolder;
+}
+.TopRightBar {
+  font-weight: bolder;
+  
+}
+.TopRightBar span{
+  padding:0px 10px;
+}
+
+.TopRightBar  .Amount {
+font-weight: 200;
+padding: 10px;
+}
+
+.TopBarContainer {
+  padding:10px 0px;
+  border-bottom:1px solid #70707038;
+  
+}
+@media only screen and (max-width: 600px) {
+  .TopRightBar  .Amount {
+ padding: 2px;
+    
+  }
+  .TopRightBar span{
+    padding:0px 2px;
+    font-size:12px;
+  }
+  
+}
+
+.Menu h2 {
+  color:var(--FontColor13)
+}
+.Menu a {
+  color:var(--textColorBlack) !important;
+  font-weight: 500;
+  font-size:14px;
+}
+.Menu a:hover {
+  color:var(--textColorBlue) !important;
+}
+.Menu .nav-item {
+  padding:0px 4vh;
+}
+
+.CarouselContainer .GradidentBackGround {
+  background: rgb(252,72,96);
+background: linear-gradient(to right, #fc4860 0%, #8c5fde 55.45%, #8c5fde 79.49%, #7464f9 96.23%, #6f65ff 100%);
+padding:30px 0px;
+}
+.owl-carousel .owl-item img {
+  width: 230px;
+}
+.CarouselContainer {
+  color:var(--white);
+}
+.CarouselContainer .owl-nav {
+
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+}
+
+.owl-prev {
+  position: absolute;
+  left: 0 !important;
+}
+.owl-next {
+  position: absolute;
+  right:0 !important;
+}
+.CarouselContainer .row div:nth-child(1)
+{
+  width: 300px;
+}
+
+.BannerProducts .FirstBanner{
+  background-color: var(--FontColor12);
+  position: relative;
+  color:var(--white);
+}
+.BannerProducts .FirstBanner p {
+  max-width: 200px;
+  
+
+
+}
+.BannerProducts  h4 {
+  font-weight: 330;
+  font-size:24px ;
+  opacity: 0.8;
+}
+
+.BannerProducts .FirstBanner img {
+  position: absolute;
+  
+  width: 216px; 
+  
+  bottom:0px;
+  right:0px;
+
+}
+@media only screen and (max-width: 600px) {
+
+  .BannerProducts .FirstBanner img {
+
+}
+}
+
+
+.SecondBanner img  {
+  width: 250px ;
+
+
+}
+.SecondBanner {
+  background-color: var(--FontColor2);
+  padding: 15px !important;
+  }
+
+  .ThirdBanner {
+    padding:15px;
+    background-color: var(--FontColor5);
+  }
+  
+  .ThirdBanner img{
+  width: 170px;
+}
+
+.BannerProducts > div {
+
+
+display:  flex !important;
+
+}
+.BannerProducts {
+  margin-top:-40px;
+
+}
+.BestSeller h2,
+.BestSeller ul {
+  color:var(--FontColor6);
+}
+
+.ProductOwlContainer .item {
+
+  margin-top:25px;
+
+}
+
+.ProductOwlContainer .owl-dots {
+position: absolute;
+  
+  width: fit-content;
+  height: fit-content;
+  left:94px;
+  
+
+    opacity:0;
+  display:none !important;
+  transition-duration:5000ms;
+}
+.ProductContainer {
+  border:4px solid var(--FontColor2);
+  border-radius: 8px;
+  width: 270px;
+  
+  
+  
+}
+.ProductOwlContainer:hover .owl-dots {
+  opacity: 1;
+  display: block !important;
+}
+.ProductsContainer .ProductName {
+  font-weight: 500;
+  width: fit-content;
+}
+.ProductsContainer hr {
+  width: 80%;
+  
+  border-top: 3px solid var(--FontColor5);
+  
+  
+}
+.ProductsContainer  .bi-star-fill{
+  color:var(--FontColor18);
+
+  padding:2px;
+}
+.ProductsContainer .Stars {
+  width: fit-content;
+}
+.ProductsContainer .gray-star {
+  color:var(--FontColor5);
+ 
+}
+.ProductsContainer .Price {
+  font-size:16px;
+  font-weight: 400;
+  width: fit-content;
+}
+.ProductsContainer .RedPrice {
+  color:var(--FontColor14);
+}
+.ProductsContainer .Price > span {
+  padding:5px;
+}
+.ProductsContainer .GrayPrice {
+  color:var(--FontColor5);
+  text-decoration: line-through;
+}
+
+.ProductsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  
+ 
+ 
+  
+}
+.ProductContainer {
+margin-top:50px !important;
+  
+}
+
+
+@media only screen and (max-width: 600px) { 
+  .ProductContainer {
+    margin:0 auto;
+  }
+  .BannerCarousel .row {
+    
+    flex-wrap: wrap  !important;
+    margin:0 auto !important;
+    
+  }
+}
+
+.BannerCarousel .row {
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  
+}
+
+.BannerCarousel img {
+  
+  max-width: 400px !important;
+}
