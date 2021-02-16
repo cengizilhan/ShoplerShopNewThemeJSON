@@ -315,3 +315,43 @@ margin-top:50px !important;
   
   max-width: 400px !important;
 }
+.s2thBanner .container-fluid {
+  background-color: var(--FontColor8);
+  color:var(--FontColor2);
+}
+.s2thBanner img {
+  max-width: 250px;
+}
+.support i{
+ font-size:80px;
+ color:var(--FontColor12);
+}
+.support h4 {
+  padding-top:20px;
+  padding-bottom:25px;
+}
+.Search .container {
+
+  max-width: 400px;
+}
+.Bottom h4 {
+  color:var(--FontColor5);
+}
+.Bottom > div > div {
+  max-width: 380px;
+}
+.Bottom i {
+  font-size:30px;
+  padding-right:20px;
+}
+.BottomLinks h5 {
+  padding-bottom:15px;
+}
+.BottomLinks h6{
+  font-weight: 400;
+  padding-top:10px;
+}
+.signature img {
+  width: 50px;
+margin-left:5px;
+}
