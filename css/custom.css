@@ -355,3 +355,125 @@ margin-top:50px !important;
   width: 50px;
 margin-left:5px;
 }
+.BreadCont .container-fluid {
+  background-color: var( --FontColor2);
+}
+.BreadCont .breadcrumb {
+  width: fit-content;
+  margin: 0 auto;
+  ;
+}
+.BreadCont a {
+  color:var(--textColorBlue);
+  font-weight: 500;
+}
+.MainContainer .FilterDiv{
+  clear: both;
+   
+   
+   max-width: 240px;
+}
+.MainContainer .FilterDiv span {
+  float:right;
+}
+.MainContainer .FilterDiv h6 {
+  display: inline-block;
+  
+} 
+.FilterDiv .categories,
+.FilterDiv .PricesDiv,
+.FilterDiv .ColorFilterDiv,
+.FilterDiv .brands{
+  background-color: var(--FontColor2);
+  border-radius: 5px;
+}
+.FilterDiv .categories > div {
+  padding-top:12px;
+}
+
+.cc-selector input{
+  margin:0;padding:0;
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
+}
+
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+  -webkit-filter: none;
+     -moz-filter: none;
+          filter: none;
+      
+}
+.drinkcard-cc{
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+  font-size:25px;
+  
+  -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+          transition: all 100ms ease-in;
+         
+
+}
+.drinkcard-cc:hover{
+  
+}
+.ColorFilterDiv .pink {
+  color:pink;
+}
+.ColorFilterDiv .yellow {
+  color:yellow;
+}
+.ColorFilterDiv .red {
+  color:red;
+}
+.ColorFilterDiv .blue {
+  color:blue;
+}
+.ColorFilterDiv i{
+  padding:3px;
+}
+.ProductBanner {
+  background-color: var(--FontColor8);
+  border-radius:10px;
+  color:var(--FontColor2);
+}
+.ProductBanner img {
+  max-width: 180px;
+}
+.FilterBar {
+  background-color: var(  --FontColor2);
+  font-size:20px;
+}
+.FilterBar select{
+  
+}
+.FilterBar span {
+  padding-right:30px;
+}
+.FilterBar select {
+  
+  background-color: var(  --FontColor2);
+  border-color:rgb(109, 108, 108) !important;
+}
+.FilterBar i {
+  font-size:25px;
+}
+.PaginationContainer {
+  background-color: var(  --FontColor2);
+  
+}
+.PaginationContainer a {
+  color:black;
+}
+.page-item.active .page-link{
+  background-color:black;
+  
+}
+.page-link {
+  border:none;
+}
