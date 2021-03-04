@@ -11,10 +11,29 @@
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link href="./css/custom.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <!--Owl Carousel-->
   <link rel="stylesheet" href="./assets/owlcarousel2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="./assets/owlcarousel2.3.4/assets/owl.theme.default.min.css">
+  <script src="./assets/sweetalert2010.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+    
+    <!--Magnify Master ( img magnify )-->
+    
+    <link rel="stylesheet" href="./assets/magnify-master//magnify.css">
+    <script src="./assets/magnify-master/jquery.magnify-mobile.js"></script>
+    <script src="./assets/magnify-master/jquery.magnify.js"></script>
+
+    <!--FancyBox Master (img zoom-windows)-->
+    <link rel="stylesheet" href="./assets/fancybox-master/jquery.fancybox.css">
+    <script src="./assets/fancybox-master/jquery.fancybox.js"></script>
+
+    
+    <!--Custom JS-->
+    <script type="text/javascript" src="./js/KeyConstant.js"></script>
+    <script type="text/javascript" src="./js/products.js"></script>
+    
+    <script type="text/javascript" src="./js/main.js"></script>
 
 
   <title>Hello, world!</title>
@@ -78,14 +97,14 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
-                  HOME
+                  KATEGORİLER
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="CategoryDropDown">
                   <li><a class="dropdown-item" href="#">STORE</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                
                 </ul>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">STORE</a>
               </li>
@@ -178,11 +197,7 @@
         '<i class="bi bi-chevron-left"></i>',
         '<i class="bi bi-chevron-right"></i>'
       ],
-
-
-
-
-      responsive: {
+  responsive: {
         0: {
           items: 1
         },
@@ -274,7 +289,7 @@
     <div class="container ProductsContainer">
 
 
-      <div class="ProductContainer ">
+      <div class="ProductContainer " onclick="myFunction()">
         <div class="owl-carousel owl-theme ProductOwlContainer">
           <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
           <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
@@ -367,17 +382,7 @@
     </div>
 
     <script>
-      $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 35,
-        nav: false,
-        singleItem: true,
-        touchDrag: true,
-        mouseDrag: true,
-        autoWidth: true,
-        center: true,
-        items: 1,
-      })
+
     </script>
 
 
@@ -406,7 +411,7 @@
       <div class="d-flex flex-wrap flex-md-nowrap justify-content-evenly text-center">
         <div class=" p-1 ">
           <i class="bi bi-truck "></i>
-          <h4>FREE SHIPPING</h4>
+          <h4>FREE SHIPPINGs</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore iusto placeat obcaecati! Animi est optio
             similique nesciunt quaerat facilis aperiam praesentium, molestias natus debitis voluptate velit ex minima
             recusandae eius.</p>
@@ -558,5 +563,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
 </body>
+<script>
+
+
+
+
+</script>
 
 </html>

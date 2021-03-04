@@ -1,0 +1,154 @@
+[
+{
+    "id": 1,
+    "basket_piece":1,
+    "product_code":"FRV 332",
+    "brand":"Fjallraven",
+    "title": "Fjallraven Backpack",
+    "price": 109.95,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 9,
+    "image": "./imgs/products/bagg.jpg,./imgs/products/bagg2.jpg,./imgs/products/bagg3.jpg"
+  },
+  {
+    "id": 2,
+    "basket_piece":1,
+    "product_code":"IPH 112",
+    "brand":"Apple",
+    "title": "Iphone 12",
+    "price": 1300,
+    "isFreeCargo":false,
+    "description": "Commodo id sit ad adipisicing nostrud incididunt eu enim non consectetur duis incididunt deserunt laborum.",
+    "category_id": 5,
+    "image": "./imgs/products/iphone12-red.png,./imgs/products/iphone-12-green-select-2020.png,./imgs/products/iphone12pro.jpg"
+  }
+  ,
+  {
+    "id": 3,
+    "basket_piece":1,
+    "product_code":"IPH 113",
+    "brand":"Apple",
+    "title": "Iphone 11",
+    "price": 1250,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 5,
+    "image": "./imgs/products/iphone11-green.png,./imgs/products/iphone11-1.jpg,./imgs/products/iphone11-2.png"
+  }
+  ,
+  {
+    "id": 4,
+    "basket_piece":1,
+    "product_code":"IPA 112",
+    "brand":"Apple",
+    "title": "iPad Air 2016",
+    "price": 1499,
+    "isFreeCargo":false,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 6,
+    "image": "./imgs/products/ipad.png,./imgs/products/ipad11.jpg,./imgs/products/ipad122.jpg"
+  },
+  {
+    "id": 5,
+    "basket_piece":1,
+    "product_code":"NK 332",
+    "brand":"Nike",
+    "title": "Nike Ayakkabi",
+    "price": 650,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 8,
+    "image": "./imgs/products/ayakkabi1.png,./imgs/products/ayak3.png,./imgs/products/ayak2.png"
+  },
+  {
+    "id": 6,
+    "basket_piece":1,
+    "product_code":"FKR 112",
+    "brand":"Fakir",
+    "title": "Fakir Ütü",
+    "price": 701,
+    "isFreeCargo":false,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 0,
+    "image": "./imgs/products/utuf.png,./imgs/products/utu.png,./imgs/products/utu3.jpg"
+  },
+  {
+    "id": 7,
+    "basket_piece":1,
+    "product_code":"LNS 332",
+    "brand":"Lonsdale",
+    "title": "Kum Torbası",
+    "price": 864,
+    "isFreeCargo":false,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 8,
+    "image": "./imgs/products/punch.png,./imgs/products/kumtorbasi2.jpg,./imgs/products/kumtorbasi3.jpg"
+  },
+  {
+    "id": 8,
+    "basket_piece":1,
+    "product_code":"DE 662",
+    "brand":"Decahtlon",
+    "title": "Çadır",
+    "price": 2500,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 7,
+    "image": "./imgs/products/cadir.png,./imgs/products/cadir2.jpg,./imgs/products/cadir3.jpeg"
+  },
+  {
+    "id": 9,
+    "basket_piece":1,
+    "product_code":"MD 332",
+    "brand":"Ikea",
+    "title": "Masa",
+    "price": 1320,
+    "isFreeCargo":false,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 4,
+    "image": "./imgs/products/masa.png,./imgs/products/masa2.jpg,./imgs/products/masa3.jpg"
+  },
+  {
+    "id": 10,
+    "basket_piece":1,
+    "product_code":"BUZ 943",
+    "brand":"Bosch",
+    "title": "Buzdolabı",
+    "price": 1320,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 3,
+    "image": "./imgs/products/buzdolabi.png,./imgs/products/buzdolabi2.jpg,./imgs/products/buzdolabi3.png"
+  },
+  {
+    "id": 11,
+    "basket_piece":1,
+    "product_code":"MATK 645",
+    "brand":"Okh",
+    "title": "Matkap",
+    "price": 2300,
+    "isFreeCargo":false,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 2,
+    "image": "./imgs/products/matkap.png,./imgs/products/matkap2.jpg,./imgs/products/matkap3.jpg"
+  },
+  {
+    "id": 12,
+    "basket_piece":1,
+    "product_code":"PAR 132",
+    "brand":"Boss",
+    "title": "Parfüm",
+    "price": 2300,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 1,
+    "image": "./imgs/products/parfum.png,./imgs/products/parfum2.jpg,./imgs/products/parfum3.jpg"
+  }
+  
+  
+  
+  
+  
+  
+]

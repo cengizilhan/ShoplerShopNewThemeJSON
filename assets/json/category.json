@@ -1,0 +1,53 @@
+[
+	{
+		"ID":0,
+		"CategoryName": "Küçük Ev Aletleri",
+		"link": "./index.html?categoryid=0"
+	},
+	{
+		"ID":1,
+		"CategoryName": "Kişisel Bakım",
+		"link": "./index.html?categoryid=1"
+	},
+	{
+		"ID":2,
+		"CategoryName": "Bahçe, Yapı Market",
+		"link": "./index.html?categoryid=2"
+	},
+	{
+		"ID":3,
+		"CategoryName": "Beyaz Eşya, Klima",
+		"link": "./index.html?categoryid=3"
+	},
+	{
+		"ID":4,
+		"CategoryName": "Ev, Yaşam",
+		"link": "./index.html?categoryid=4"
+	},
+	{
+		"ID":5,
+		"CategoryName": "Telefonlar",
+		"link": "./index.html?categoryid=5"
+	},
+	{
+		"ID":6,
+		"CategoryName": "Tabletler",
+		"link": "./index.html?categoryid=6"
+    },
+    {
+		"ID":7,
+		"CategoryName": "Outdoor",
+		"link": "./index.html?categoryid=7"
+	},
+	{
+		"ID":8,
+		"CategoryName": "Spor",
+		"link": "./index.html?categoryid=8"
+	},
+	{
+		"ID":9,
+		"CategoryName": "Diğer Kategoriler",
+		"link": "./index.html?categoryid=9"
+	}
+
+]
