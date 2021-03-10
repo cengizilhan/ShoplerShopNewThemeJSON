@@ -1,107 +1,34 @@
 
-/*
-login html
-register html
-
-*/
-// A $( document ).ready() block.
-$(document).ready(function () {
-
-    GetCategories();
-    ProductsFillToBody();
-    CategoryDetector();
-
-
-    IndexOwlStarter();
-
-
-})
-
-//index.html onclick product//
-$(document).on('click', '#ProductContainer', function(e) {
- var test3=$(this).attr('data-productid');
-           console.log(test3);
-    }) ;
-   
 
 
 
+function BreadCrumber(categoryid, itemtitle) {
 
-
-
-
-function ProductsFillToBody() {
-
-    $.get(ProductsUrl, function (arr) {
-        $.each(arr, function (index, value) {
-            //index,value//
-
-            AddItemToIndex(value);
-        });
-    })
-
-}
-
-
-
-function ClearTheIndex() {
-    $(".ProductsContainer").empty();
-}
-
-function AddItemToIndex(arr) {
-    var imgArr = arr.image.split(",");
-    var htmlitem = `<div class="ProductContainer" id="ProductContainer" data-productid="${arr.id}">
-    <div class="owl-carousel owl-theme ProductOwlContainer">
-    <div class="item mx-auto"><img  src="${imgArr[0]}"></div>
-    <div class="item mx-auto"><img  src="${imgArr[1]}"></div>
-    <div class="item mx-auto"><img  src="${imgArr[2]}"></div>
-    </div>
-    <hr class="mx-auto mt-5 mb-4">
-    <div class="ProductName mt-4 mx-auto">${arr.title}</div>
-    <div class="Stars mx-auto mt-3">
-    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-    class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
-    </div>
-    <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$ ${arr.price}</span> <span class="GrayPrice">$599</span>
-    </div>
-    </div>`;
-
-    $(htmlitem).appendTo(".ProductsContainer");
-    IndexOwlStarter();
-}
-
-
-
-function IndexOwlStarter() {
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 35,
-        nav: false,
-        singleItem: true,
-        touchDrag: true,
-        mouseDrag: true,
-        autoWidth: false,
-        center: true,
-        items: 1,
-
-        responsive: {
-            0: {
-                items: 1,
-                autoWidth: false
-            },
-            908: {
-                items: 1,
-                autoWidth: false
-            },
-            1236: {
-                items: 1,
-                autoWidth: false
-            }
+    $.get(CategoriesUrl, function (arr) {
+  
+      $.each(arr, function (index, value) {
+        if (categoryid==value.ID){
+         
+    var breadcrumbitem = `
+    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="${value.link}">${value.CategoryName}</a></li>
+    <li class="breadcrumb-item active" aria-current="page><a href="${value.link}">${itemtitle}</a></li>
+    
+    `;
+    $('#breadcrumb').empty();
+    $(breadcrumbitem).appendTo('#breadcrumb');
+  
         }
+        
+      });
+    });
+  
+  
+  
+  
+  }
 
-    })
-}
-
+  
 function CategoryFilter(CategoryId) {
 
     $.get(ProductsUrl, function (arr) {
@@ -121,7 +48,7 @@ function CategoryFilter(CategoryId) {
 function GetCategories() {
 
     $.get(CategoriesUrl, function (arr) {
-        console.warn(arr);
+
 
         $.each(arr, function (index, value) {
             var htmlitem = ` 
@@ -132,13 +59,7 @@ function GetCategories() {
 
 }
 
-function CategoryDetector() {
-    var QueryStr = getAllUrlParams().categoryid; // 'shirt-1-2 value'
-    if (QueryStr != null) {
-        CategoryFilter(QueryStr);
-    }
 
-}
 
 //url query function//
 function getAllUrlParams(url) {
@@ -204,4 +125,33 @@ function getAllUrlParams(url) {
     }
 
     return obj;
+}
+function IndexOwlStarter() {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 35,
+        nav: false,
+        singleItem: true,
+        touchDrag: true,
+        mouseDrag: true,
+        autoWidth: false,
+        center: true,
+        items: 1,
+
+        responsive: {
+            0: {
+                items: 1,
+                autoWidth: false
+            },
+            908: {
+                items: 1,
+                autoWidth: false
+            },
+            1236: {
+                items: 1,
+                autoWidth: false
+            }
+        }
+
+    })
 }

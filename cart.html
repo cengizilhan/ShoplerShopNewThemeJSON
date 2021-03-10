@@ -16,7 +16,12 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 
-
+ <!--Custom JS-->
+ <script type="text/javascript" src="./js/cartlocalstorage.js"></script>
+ <script type="text/javascript" src="./js/KeyConstant.js"></script>
+ <script type="text/javascript" src="./js/cart.js"></script>
+ <script type="text/javascript" src="./js/products.js"></script>
+ 
   <title>Hello, world!</title>
 </head>
 
@@ -80,16 +85,16 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
-                  HOME
+                  KATEGORİLER
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"  id="CategoryDropDown">
                   <li><a class="dropdown-item" href="#">STORE</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">STORE</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">IPHONE</a>
@@ -101,7 +106,7 @@
                 <a class="nav-link" href="#">MACBOOK</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ACCESSORIES</a>
+                <a class="nav-link" href="./cart.html">CART</a>
               </li>
 
             </ul>
@@ -119,9 +124,9 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb ">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Cart</li>
           </ol>
         </nav>
       </div>
@@ -141,33 +146,8 @@
         <th><span>QTY</span></th>
         <th><span>UNIT PRICE</span></th>
       </tr>
-      <tr>
-        <td valign="middle">
-          <button><i class="bi bi-x"></i></button>
-        </td>
-        <td valign="middle"><img class="img-fluid" src="./imgs/products/ayak3.png"></td>
-        <td valign="middle">Philips Hue 7W BR30 Connected Downlight Lamp </td>
-        <td valign="middle">999$</td>
-        <td valign="middle">
-          <div class="RangeChanger"><a href="#"><i class="bi bi-dash"></i></a> <span class="p-md-3 p-xl-3">2</span><a
-              href="#"><i class="bi bi-plus"></i></a> </div>
-        </td>
-        <td valign="middle">$499</td>
-      </tr>
 
-      <tr>
-        <td valign="middle">
-          <button><i class="bi bi-x"></i></button>
-        </td>
-        <td valign="middle"><img class="img-fluid" src="./imgs/products/ayak2.png"></td>
-        <td valign="middle">Philips Hue 7W BR30 Connected Downlight Lamp </td>
-        <td valign="middle">999$</td>
-        <td valign="middle">
-          <div class="RangeChanger"><a href="#"><i class="bi bi-dash"></i></a> <span class="p-md-3 p-xl-3">3</span><a
-              href="#"><i class="bi bi-plus"></i></a> </div>
-        </td>
-        <td valign="middle">$499</td>
-      </tr>
+ 
 
     </table>
 
@@ -197,7 +177,7 @@
         <div class="d-flex justify-content-between" style="width: 300px;"><span>Coupon</span><span>No</span>
         </div>
         <hr>
-        <div class="d-flex justify-content-between" style="width: 300px;"><span>TOTAL</span><span>$118</span>
+        <div class="d-flex justify-content-between" style="width: 300px;" ><span>TOTAL</span><span id="totalcount">$118</span>
         </div>
         <div>
           <button class="btn  btn-primary" type="button" id="button-addon2">Redeem</button>

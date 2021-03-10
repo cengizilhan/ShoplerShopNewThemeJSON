@@ -732,3 +732,11 @@ max-width: 300px;
   width: 100%;
   height: 200px !important; 
 }
+
+#IncreaseBtn,
+#DecreaseBtn {
+
+  color: var(--textColorBlue);
+   border:none !important;
+   background-color: transparent;
+}

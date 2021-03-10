@@ -13,9 +13,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./assets/owlcarousel2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="./assets/owlcarousel2.3.4/assets/owl.theme.default.min.css">
+  
+  
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 
+    
+    <!--Custom JS-->
+    <script type="text/javascript" src="./js/KeyConstant.js"></script>
+    <script type="text/javascript" src="./js/product_detail.js"></script>
+    <script type="text/javascript" src="./js/products.js"></script>
+    <script type="text/javascript" src="./js/cartlocalstorage.js"></script>
+    
+    
+    
 
   <title>Hello, world!</title>
 </head>
@@ -80,16 +91,15 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
-                  HOME
+                  KATEGORİLER
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="CategoryDropDown">
                   <li><a class="dropdown-item" href="#">STORE</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">STORE</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">IPHONE</a>
@@ -101,7 +111,7 @@
                 <a class="nav-link" href="#">MACBOOK</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ACCESSORIES</a>
+                <a class="nav-link" href="./cart.html">CART</a>
               </li>
 
             </ul>
@@ -118,7 +128,7 @@
       <div class="container pt-3 pb-3">
 
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb ">
+          <ol class="breadcrumb" id="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Library</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data</li>
@@ -135,7 +145,7 @@
         <div class="TopRow d-lg-flex flex-lg-row d-sm-flex flex-sm-column ">
           <div class="ProductImgCont ">
             <div class="ImgVerticalCont">
-              <div><img class="img-fluid" src="./imgs/products/ayak2.png"></div>
+              <div><img class="img-fluid" id="mainimg" src="./imgs/products/ayak2.png"></div>
               <div class="smallimgs d-lg-flex justify-content-sm-between 
               d-sm-flex justify-content-lg-evenly
               pt-3
@@ -218,10 +228,10 @@
               <hr>
             </div>
             <div class="d-flex justify-content-between">
-              <div class="RangeChanger"><a href="#"><i class="bi bi-dash"></i></a> <span
-                  class="p-md-3 p-xl-3">2</span><a href="#"><i class="bi bi-plus"></i></a> </div>
+              <div class="RangeChanger"><a id="DecreaseBtn" href="#" ><i class="bi bi-dash"></i></a> <span
+                  class="p-md-3 p-xl-3" id="ProductCountValue">1</span><a href="#" id="IncreaseBtn" ><i class="bi bi-plus"></i></a> </div>
               <div class="">
-                <button class="AddCart"><i class="bi bi-cart3"></i> Add To Cart</button>
+                <button class="AddCart" id="AddToCartBtn"><i class="bi bi-cart3"></i> Add To Cart</button>
                 <button class="AddCart"><i class="bi bi-heart"></i></button>
               </div>
             </div>
@@ -276,33 +286,6 @@
 
 
 
-        <script>
-          $('#Collapse1').on('click', function (e) {
-            var coll1 = $('#CollapseDiv1');
-            var coll2 = $('#CollapseDiv2');
-            var ColBtn2 = $("#Collapse2");
-            var ColBtn1 = $("#Collapse1");
-            coll2.addClass("disable");
-            ColBtn1.addClass("CollBtnHr");
-            ColBtn2.removeClass("CollBtnHr");
-            coll1.removeClass("disable");
-
-
-          })
-          $('#Collapse2').on('click', function (e) {
-            var coll1 = $('#CollapseDiv1');
-            var coll2 = $('#CollapseDiv2');
-            var ColBtn1 = $("#Collapse1");
-            var ColBtn2 = $("#Collapse2");
-            coll1.addClass("disable");
-            ColBtn2.addClass("CollBtnHr");
-            ColBtn1.removeClass("CollBtnHr");
-            coll2.removeClass("disable");
-
-          })
-
-
-        </script>
 
 
 
@@ -310,6 +293,8 @@
 
       </div>
 
+      
+ 
       <div class="ProductRightBar pt-2 ">
         <span class="SellerHeader">BEST SELLER</span>
         <div class="ProductsContainer">
@@ -745,6 +730,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
+    <script src="./assets/owlcarousel2.3.4/owl.carousel.min.js"></script>
 </body>
 
 </html>
