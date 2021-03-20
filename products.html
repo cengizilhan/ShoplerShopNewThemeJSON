@@ -16,6 +16,12 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 
+    <script src="./js/productspage.js" ></script>
+    <script src="./js/products.js" ></script>
+    <script type="text/javascript" src="./js/KeyConstant.js"></script>
+    
+    
+    
 
   <title>Hello, world!</title>
 </head>
@@ -78,16 +84,15 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
-                  HOME
+                  KATEGORİLER
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="CategoryDropDown">
                   <li><a class="dropdown-item" href="#">STORE</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">STORE</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">IPHONE</a>
@@ -99,7 +104,7 @@
                 <a class="nav-link" href="#">MACBOOK</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ACCESSORIES</a>
+                <a class="nav-link" href="./cart.html">CART</a>
               </li>
 
             </ul>
@@ -116,10 +121,10 @@
       <div class="container pt-3 pb-3">
 
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb ">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
+          <ol class="breadcrumb" id="breadcrumb">
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
           </ol>
         </nav>
       </div>
@@ -131,7 +136,8 @@
       <div class="FilterDiv ">
         <div class="categories p-3">
 
-          <h5>ACCESSORIES</h5>
+          <h5>CATEGORIES</h5>
+          <div id="categoriesid">
           <div> <a href="#">
               <h6>Apple Car</h6>
             </a> <span>2</span> </div>
@@ -153,17 +159,36 @@
           <div> <a href="#">
               <h6>Headphones</h6>
             </a> <span>23</span></div>
+
+          </div>
         </div>
 
 
         <div class="PricesDiv p-3 mt-4">
           <h5>PRICES</h5>
-          <label for="customRange1" class="form-label">Example range</label>
-          <input type="range" class="form-range" id="customRange1">
+          <label for="customRange1" class="form-label">Minimum price</label>
+          <input type="range" min="1" max="100" class="form-range" id="customRange1">
+          <p id="rangesult"></p>
+          <script>
+            $('#customRange1').on('input', function () {
+    $(this).trigger('change');
+    var test=$(this).val();
+    
+    $('#rangesult').text(test);
+    
+});
+$('#customRange1').on('focusout', function () { 
+  var val=$(this).val();
+  ShortBy(style,page,val)
+
+})
+
+
+          </script>
 
         </div>
 
-        <div class="ColorFilterDiv p-3 mt-4">
+        <div class="ColorFilterDiv p-3 mt-4" style="display:none;">
           <h5>COLOR</h5>
           <div class="cc-selector">
             <input id="visa" type="radio" name="credit-card" value="visa" />
@@ -189,7 +214,7 @@
         </div>
 
 
-        <div class="brands categories p-3 mt-4">
+        <div class="brands categories p-3 mt-4" style="display:none;">
 
           <h5>BRAND</h5>
           <div> <a href="#">
@@ -205,154 +230,89 @@
       <div class="ProductCont flex-grow-1">
 
         <div class="container">
-        <div class="ProductBanner p-5 d-lg-flex flex-lg-row d-sm-flex flex-sm-column">
-        <div>
-          <h2 class="pt-5 pb-2">iPhone 8</h2>
-          <p>Performence and design. Taken right to the edge.</p>
-          <h5 class="pt-4">SHOP NOW</h5>
-        </div>
-        <div>
-          <img class="img-fluid" src="./imgs/carousel/iphone8.png">
-        </div>
-        </div>
-
-
-        <div class="FilterBar mt-3 p-4 d-flex justify-content-between">
-        <div class="left">
-          <span>13 Items </span>
-          <span>
-            <label for="cars">Sort By:</label>
-            <select class="custom-select">
-              <option selected>Name</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </span>
-
-          <span>
-            <label for="cars">Show:</label>
-            <select class="custom-select">
-              <option selected>12</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </span>
-        </div>
-        <div class="right">
-          <i class="bi bi-grid-3x3-gap"></i>
-          <i class="bi bi-justify"></i>
-
-        </div>
-        </div>
-
-        <div class="ProductsContainer justify-content-evenly">
-
-
-          <div class="ProductContainer ">
-            
-            <div class="owl-carousel owl-theme ProductOwlContainer">
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-          </div>
-            <hr class="mx-auto mt-5 mb-4">
-            <div class="ProductName mt-4 mx-auto">Apple Macbook Pro</div>
-            <div class="Stars mx-auto mt-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
+          <div class="ProductBanner p-5 d-lg-flex flex-lg-row d-sm-flex flex-sm-column">
+            <div>
+              <h2 class="pt-5 pb-2">iPhone 8</h2>
+              <p>Performence and design. Taken right to the edge.</p>
+              <h5 class="pt-4">SHOP NOW</h5>
             </div>
-            <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
-            </div>
-          </div>
-
-          <div class="ProductContainer ">
-            
-            <div class="owl-carousel owl-theme ProductOwlContainer">
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-          </div>
-            <hr class="mx-auto mt-5 mb-4">
-            <div class="ProductName mt-4 mx-auto">Apple Macbook Pro</div>
-            <div class="Stars mx-auto mt-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
-            </div>
-            <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
+            <div>
+              <img class="img-fluid" src="./imgs/carousel/iphone8.png">
             </div>
           </div>
 
 
-          <div class="ProductContainer ">
-            
-            <div class="owl-carousel owl-theme ProductOwlContainer">
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-          </div>
-            <hr class="mx-auto mt-5 mb-4">
-            <div class="ProductName mt-4 mx-auto">Apple Macbook Pro</div>
-            <div class="Stars mx-auto mt-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
+          <div class="FilterBar mt-3 p-4 d-flex justify-content-between">
+            <div class="left">
+              <span>13 Items </span>
+              <span>
+                <label for="cars">Sort By:</label>
+                <select id="ShortSelect" class="custom-select">
+                  <option selected>Default</option>
+                  <option value="Price19">Price Low To High</option>
+                  <option value="Price91">Price High To Low</option>
+                  <option value="TitleAZ">Name A-Z</option>
+                  <option value="TitleZA">Name Z-A</option>
+                </select>
+              </span>
+<!--
+              <span>
+                <label for="cars">Show:</label>
+                <select class="custom-select">
+                  <option selected>12</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </span>-->
             </div>
-            <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
+            <div class="right">
+              <button id="FillVertical" class="noButton"><i class="bi bi-grid-3x3-gap"></i></button>
+              <button id="FillHorizontal" class="noButton"><i class="bi bi-justify"></i></button>
+
             </div>
           </div>
 
+          <div class="ProductsContainer justify-content-evenly">
+           
 
-          <div class="ProductContainer ">
-            
-            <div class="owl-carousel owl-theme ProductOwlContainer">
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-          </div>
-            <hr class="mx-auto mt-5 mb-4">
-            <div class="ProductName mt-4 mx-auto">Apple Macbook Pro</div>
-            <div class="Stars mx-auto mt-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
-            </div>
-            <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
-            </div>
-          </div>
+              <div class="ProductLandContainer d-lg-flex flex-lg-row d-sm-flex flex-sm-column mt-4">
+                <div id="owlLandCont">
+                  <div class="owl-carousel owl-theme ProductOwlContainer">
+                    <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
+                    <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
+                    <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
+                  </div>
+                </div>
+                <div class="secondCont">
 
-          <div class="ProductContainer ">
-            
-            <div class="owl-carousel owl-theme ProductOwlContainer">
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-          </div>
-            <hr class="mx-auto mt-5 mb-4">
-            <div class="ProductName mt-4 mx-auto">Apple Macbook Pro</div>
-            <div class="Stars mx-auto mt-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
-            </div>
-            <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
-            </div>
-          </div>
+                  <div class="ProductName ">Apple Macbook Pro</div>
+                  <div class="d-flex mt-3">
+                    <div class="Stars  mt-3">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
+                    </div>
+                    <span class="reviews">0 reviews</span>
+                    <a href="#"><span class="submit">Submit a review</span></a>
+                  </div>
+                  <div><hr></div>
+                  <div>
+                    <div class="Price mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
+                    </div>
+                  </div>
+                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum architecto sequi, doloremque fugit temporibus ullam provident </div>
+                  <div class="mt-3"><button class="AddCart" id="AddToCartBtn" data-productid="2"><i class="bi bi-cart3"></i> Add To Cart</button>
+                    <button class="AddCart"><i class="bi bi-heart"></i></button></div>
 
-          <div class="ProductContainer ">
-            
-            <div class="owl-carousel owl-theme ProductOwlContainer">
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-              <div class="item mx-auto"><img class="img-fluid" src="./imgs/carousel/macbook.png"></div>
-          </div>
-            <hr class="mx-auto mt-5 mb-4">
-            <div class="ProductName mt-4 mx-auto">Apple Macbook Pro</div>
-            <div class="Stars mx-auto mt-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill gray-star"></i>
-            </div>
-            <div class="Price mx-auto mt-3 mb-3"><span class="RedPrice">$499</span> <span class="GrayPrice">$599</span>
-            </div>
-          </div>
+                </div>
+                
+              </div>
+
+          
+
+
+          
+  
 
 
           </div>
@@ -360,36 +320,26 @@
 
 
           <script src="./assets/owlcarousel2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 35,
-        nav: false,
-        singleItem: true,
-        touchDrag: true,
-        mouseDrag: true,
-        autoWidth: true,
-        center: true,
-        items: 1,
-      })
-    </script>
+          <script>
+          owlstarter();
+          </script>
 
 
-<div class="PaginationContainer mt-5">
-  <nav aria-label="..." class="mx-auto" style="width: fit-content;">
-    <ul class="pagination pagination-lg">
-      <li class="page-item active" aria-current="page">
-        <span class="page-link">1</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-    </ul>
-  </nav>
-</div>
+          <div class="PaginationContainer mt-5">
+            <nav aria-label="..." class="mx-auto" style="width: fit-content;">
+              <ul id="paginationul" class="pagination pagination-lg">
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" id="Paginationa" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" id="Paginationa" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" id="Paginationa" href="#">3</a></li>
+              </ul>
+            </nav>
+          </div>
 
 
 
-      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -398,7 +348,7 @@
 
 
 
- 
+
 
 
 

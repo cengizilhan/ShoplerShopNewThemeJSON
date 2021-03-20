@@ -15,7 +15,35 @@ $(document).on('click', '#AddToCartBtn', function (e) {
   var piece=$('#ProductCountValue').text();
   AddtoBasket(id, piece);
 
+  swal("Ürün sepete eklendi!", {
+    buttons: {
+      cancel: "Run away!",
+      catch: {
+        text: "Sepete git",
+        value: "catch",
+      },
+      cancel: "Alışverişe devam et!",
+      defeat: false,
+    },
+  })
+  .then((value) => {
+    switch (value) {
+   
+     
+   
+      case "catch":
+        
+        window.location.replace('./cart.html');
+        break;
+   
+    }
+  });
+
+
 });
+
+
+
 $(document).on('click', '#IncreaseBtn', function (e) {
 var val=$('#ProductCountValue').text();
 $('#ProductCountValue').text(++val);
@@ -27,6 +55,30 @@ $(document).on('click', '#DecreaseBtn', function (e) {
   val ==1 ? true:$('#ProductCountValue').text(--val);
   
   });
+
+
+  $(document).on('click', '#img1st', function (e) { 
+    var imgsrc=$('#img1st').attr('src');
+    $('#imgmain').attr('src',imgsrc);
+    $('#imgmain').attr('data-magnify-src',imgsrc);
+    $('#FancyIMG').attr('href',imgsrc);
+    zoomrefresh();
+  })
+  $(document).on('click', '#img2nd', function (e) { 
+    var imgsrc=$('#img2nd').attr('src');
+    $('#imgmain').attr('src',imgsrc);
+    $('#imgmain').attr('data-magnify-src',imgsrc);
+    $('#FancyIMG').attr('href',imgsrc);
+    zoomrefresh();
+  })
+  
+  $(document).on('click', '#img3rd', function (e) { 
+    var imgsrc=$('#img3rd').attr('src');
+    $('#imgmain').attr('src',imgsrc);
+    $('#imgmain').attr('data-magnify-src',imgsrc);
+    $('#FancyIMG').attr('href',imgsrc);
+    zoomrefresh();
+  })
   
 function AddtoBasket(itemid, piece) {
   $.get(ProductsUrl, function (arr) {
@@ -89,14 +141,16 @@ function ProductDetailFill(productid) {
         var htmlitem = `  <div class="TopRow d-lg-flex flex-lg-row d-sm-flex flex-sm-column ">
             <div class="ProductImgCont" data-productid="${value.id}">
               <div class="ImgVerticalCont">
-                <div><img class="img-fluid" src="${imgArr[0]}"></div>
+                <div>
+                <a href="${imgArr[0]}" id="FancyIMG" data-fancybox="gallery" data-caption=""> 
+                <img id="imgmain" src="${imgArr[0]}" class="img-fluid zoom" data-magnify-src="${imgArr[0]}"></a></div>
                 <div class="smallimgs d-lg-flex justify-content-sm-between 
                 d-sm-flex justify-content-lg-evenly
                 pt-3
                 ">
-                  <img class="smallimgs" src="${imgArr[0]}">
-                  <img class="smallimgs" src="${imgArr[1]}">
-                  <img class="smallimgs" src="${imgArr[2]}">
+                <img class="smallimgs"  id="img1st" src="${imgArr[0]}">
+                <img class="smallimgs" " id="img2nd" src="${imgArr[1]}">
+                <img class="smallimgs"  id="img3rd" src="${imgArr[2]}">
                 </div>
               </div>
             </div>
@@ -229,6 +283,7 @@ function ProductDetailFill(productid) {
         $(".ProductDetailCont").empty();
         $(htmlitem).appendTo(".ProductDetailCont");
         collapseProductDetail();
+        zoomrefresh();
 
 
       }
@@ -236,4 +291,8 @@ function ProductDetailFill(productid) {
 
   })
 
+}
+
+function zoomrefresh(){
+  $('.zoom').magnify();
 }
