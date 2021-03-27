@@ -82,3 +82,14 @@ function ReadCart() {
     return arr;
 }
 
+function TotalPieceCalculator() {
+    var arr = ReadCart();
+    
+    var totalcount = 0;
+    $.each(arr, function (index, value) {
+        totalcount = totalcount+=parseInt(value.basket_piece) 
+        
+    })
+    return totalcount;
+
+}

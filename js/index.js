@@ -7,8 +7,9 @@ $(document).ready(function () {
 
     IndexOwlStarter();
 
-
+    
 })
+
 
 //index.html onclick product//
 $(document).on('click', '#ProductContainer', function (e) {
@@ -17,6 +18,36 @@ $(document).on('click', '#ProductContainer', function (e) {
     window.location.href =  './product_detail.html?productdetail='+id+'&';
     
 });
+
+$(document).on('keyup', '#SearchBx2', function () {
+    var timeout = null
+    clearTimeout(timeout)
+    
+    timeout = setTimeout(function () {
+        var val = $("#SearchBx1").val();
+        SearchBox2(val);
+    }, 900)
+});
+
+function SearchBox2(querystr) {
+
+    var arr = ReadCart();
+    var regex = new RegExp(querystr, "i");
+    filteredSearch = arr.filter(x => x.brand.match(regex) || x.product_code.match(regex) || x.title.match(regex));
+
+    var htmlitemsum = "";
+
+    $.each(filteredSearch, function (index, value) {
+
+        htmlitemsum += `
+        <a href="./product_detail.html?productdetail=${value.id}&"> <b>${value.brand}</b>  ${value.title} </a><br>`;
+    });
+    $('#SearchResults2').empty();
+    var emptyMsg = `Sonuç bulunamadı.`;
+    var GoResults = ` <a href="./search.html?search=${querystr}">Sonuçlara gitmek için tıklayın.</a><br>`;
+    (htmlitemsum == "") ? $(emptyMsg).appendTo('#SearchResults2') : $(htmlitemsum + GoResults).appendTo('#SearchResults2');
+    $('#SearchResults2').css('display', 'block');
+}
 
 
 function CategoryDetector() {

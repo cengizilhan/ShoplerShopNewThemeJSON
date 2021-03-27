@@ -21,6 +21,7 @@
  <script type="text/javascript" src="./js/KeyConstant.js"></script>
  <script type="text/javascript" src="./js/cart.js"></script>
  <script type="text/javascript" src="./js/products.js"></script>
+ <script type="text/javascript" src="./js/navbar.js"></script>
  
   <title>Hello, world!</title>
 </head>
@@ -45,8 +46,8 @@
 
         </div>
         <div class="d-inline TopRightBar float-end">
-          <a href="#"><span><i class="bi bi-person"></i> My Profile</span></a>
-          <a href="#"><span><i class="bi bi-basket"></i> 0 Items <span class="Amount">$0.00</span></span></a>
+          <a href="./profile.html"><span><i class="bi bi-person"></i> My Profile</span></a>
+          <a href="./cart.html"><span><i class="bi bi-basket"></i> <span id="pieceHolder">0 Items </span> <span class="Amount">$0.00</span></span></a>
 
 
 
@@ -56,7 +57,11 @@
                 <i class="bi bi-search"></i>
               </button>
               <ul class="dropdown-menu">
-                #######
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Search</label>
+                  <input type="text" class="form-control" id="SearchBx" aria-describedby="emailHelp">
+                  <div id="SearchResults" class="form-text"></div>
+                </div>
               </ul>
             </div>
           </span>
@@ -69,6 +74,8 @@
     </div>
   </section>
 
+
+  
   <section class="Menu mt-4">
     <h2 class="text-center">BOUNCER</h2>
     <div class="container">
@@ -97,7 +104,7 @@
                 <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">IPHONE</a>
+                <a class="nav-link" href="./products.html">PRODUCTS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">IPAD</a>

@@ -3,6 +3,7 @@ var page = 1;
 var pagionationFlag = false;
 var minprice=0;
 var CatFilter=-1;
+var BrandFilter=null;
 
 $(document).ready(function () {
   style = "vertical";
@@ -11,6 +12,7 @@ $(document).ready(function () {
   GetCategories();
   priceRange();
   CategoriesFilter();
+  BrandCalculator();
 
 })
 
@@ -59,6 +61,48 @@ $(document).on('change', '#ShortSelect', function (e) {
 
 })
 
+$(document).on('click', '#brands div', function (e) {
+  
+  if($(this).hasClass('activecategory')) {
+    $(this).removeClass('activecategory');
+    
+    BrandFilter=null;
+    ShortBy(style, page, minprice, CatFilter, BrandFilter)
+  }else {
+
+    $(this).siblings().removeClass('activecategory not:this');
+  
+    $(this).addClass('activecategory');
+    
+    BrandFilter=$(this).attr('data-brand');
+    
+    
+  ShortBy(style, page, minprice, CatFilter, BrandFilter)
+  BrandFilter=null;
+  }
+
+ })
+
+function BrandCalculator(){
+  $.get(ProductsUrl, function (arr) {  
+    var BrandArr=[];
+    $('#brands').empty();
+    $.each(arr, function (index, value) { 
+      if (!BrandArr.includes(value.brand)) {
+        BrandArr.push(value.brand);
+        var htmlitem = ` <div data-brand=${value.brand}> <a href="#">
+        <h6>${value.brand}</h6>
+        </a> <span></span></div>`;
+       $(htmlitem).appendTo('#brands');
+      } 
+      
+
+     
+    })
+  
+  })
+}
+
 function PaginationButtonCreator(PageCount) {
   $('#paginationul').empty();
   var htmlitem;
@@ -91,7 +135,7 @@ function priceRange(){
 
   
 
-function ShortBy(shorttype, page, minprice, CatFilter) {
+function ShortBy(shorttype, page, minprice, CatFilter, BrandFilter) {
   $.get(ProductsUrl, function (arr) {
 
 
@@ -132,11 +176,22 @@ if (CatFilter>=0)
   arr=filteredArr;
   CatFilter=null;
 }
+if (BrandFilter!=null)
+{
+  var filteredArr=[];
+  for (var i=0;i<arr.length;i++){
+   arr[i].brand==BrandFilter ? filteredArr.push(arr[i]):false;      
+  }
+  arr=filteredArr;
+  BrandFilter=null;
+
+}
+    console.log();
+    $('#itemscount').text(arr.length+' items');
 
     arr = Pagination(arr, page);
-
-
     FillProducts(arr, style);
+    
 
   })
 }
@@ -175,6 +230,7 @@ $(document).on('click', '#FillVertical', function (e) {
   $(this).addClass('activeBtn');
   $('#FillHorizontal').removeClass('activeBtn');
 });
+
 $(document).on('click', '#FillHorizontal', function (e) {
   style = "horizontal";
   var ShortBySelected = $("#ShortSelect option:selected").val();
@@ -188,12 +244,19 @@ function Emptybody() {
   $('.ProductsContainer').empty();
 }
 
-
+$(document).on('click', '#ProductCont', function (e) {
+  var id = $(this).attr('data-productid');
+  console.warn(id);
+ 
+  window.location.href =  './product_detail.html?productdetail='+id+'&';
+  
+});
 function FillProducts(arr, style) {
   Emptybody();
   $.each(arr, function (index, value) {
     var imgArr = value.image.split(",");
-    var htmlitemHorizontal = ` <div id="ProductCont" class="ProductLandContainer d-lg-flex flex-lg-row d-sm-flex flex-sm-column mt-5 pt-1">
+    
+    var htmlitemHorizontal = ` <div id="ProductCont" data-productid="${value.id}"  class="ProductLandContainer d-lg-flex flex-lg-row d-sm-flex flex-sm-column mt-5 pt-1">
     <div id="owlLandCont">
       <div class="owl-carousel owl-theme ProductOwlContainer">
         <div class="item mx-auto"><img class="img-fluid" src="${imgArr[0]}"></div>
@@ -224,7 +287,7 @@ function FillProducts(arr, style) {
     </div>
     
   </div>`;
-    var htmlitemVertical = `  <div id="ProductCont" class="ProductContainer ProductVertical">
+    var htmlitemVertical = `  <div id="ProductCont"  data-productid="${value.id}" class="ProductContainer ProductVertical">
 
   <div class="owl-carousel owl-theme ProductOwlContainer">
     <div class="item mx-auto"><img class="img-fluid" src="${imgArr[0]}"></div>
