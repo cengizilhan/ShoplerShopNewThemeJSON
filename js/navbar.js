@@ -13,7 +13,7 @@ $(document).on('keyup', '#SearchBx', function () {
 
 
 
-function SearchBox(querystr) {
+ SearchBox=(querystr)=> {
 
     var arr = ReadCart();
     var regex = new RegExp(querystr, "i");
@@ -34,7 +34,7 @@ function SearchBox(querystr) {
 }
 
 
-function PriceFill() {
+ PriceFill=()=> {
     var price = TotalPriceCalculator();
     $('.Amount').text('$' + price);
 

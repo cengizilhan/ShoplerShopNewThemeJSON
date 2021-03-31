@@ -6,31 +6,31 @@ $(document).ready(function () {
     QueryPage();
 })
 
-function QueryPage(){
+QueryPage = () => {
     var QueryStr = getAllUrlParams().search;
-    QueryStr != null ? QueryFilter(QueryStr):false;
-    
-    
-    function QueryFilter(querystr){
-        $("#bestSeller").text(querystr+" results");
+    QueryStr != null ? QueryFilter(QueryStr) : false;
+
+
+    QueryFilter = (querystr) => {
+        $("#bestSeller").text(querystr + " results");
         $("#ProductsContainer").empty();
         var arr = ReadCart();
         var regex = new RegExp(querystr, "i");
         filteredSearch = arr.filter(x => x.brand.match(regex) || x.product_code.match(regex) || x.title.match(regex));
-    
+
         var htmlitemsum = "";
-    
-        $.each(filteredSearch, function (index, value) { 
+
+        $.each(filteredSearch, function (index, value) {
             AddItemToIndex(value);
         })
 
-                    
+
     }
 
-    
+
 }
 
-function AddItemToIndex(arr) {
+AddItemToIndex = (arr) => {
     var imgArr = arr.image.split(",");
     var htmlitem = `<div class="ProductContainer" id="ProductContainer" data-productid="${arr.id}">
         <div class="owl-carousel owl-theme ProductOwlContainer">
@@ -58,21 +58,21 @@ function AddItemToIndex(arr) {
 $(document).on('click', '#ProductContainer', function (e) {
     var id = $(this).attr('data-productid');
     //$(location).attr('href', './product_detail.html?productdetail='+id+'&')
-    window.location.href =  './product_detail.html?productdetail='+id+'&';
-    
+    window.location.href = './product_detail.html?productdetail=' + id + '&';
+
 });
 
 $(document).on('keyup', '#SearchBx2', function () {
     var timeout = null
     clearTimeout(timeout)
-    
+
     timeout = setTimeout(function () {
         var val = $("#SearchBx1").val();
         SearchBox2(val);
     }, 900)
 });
 
-function SearchBox2(querystr) {
+SearchBox2 = (querystr) => {
 
     var arr = ReadCart();
     var regex = new RegExp(querystr, "i");
@@ -93,7 +93,7 @@ function SearchBox2(querystr) {
 }
 
 
-function CategoryDetector() {
+CategoryDetector = () => {
     var QueryStr = getAllUrlParams().categoryid; // 'shirt-1-2 value'
     if (QueryStr != null) {
         CategoryFilter(QueryStr);
@@ -103,11 +103,11 @@ function CategoryDetector() {
 
 
 
-function ClearTheIndex() {
+ClearTheIndex = () => {
     $(".ProductsContainer").empty();
 }
 
-function ProductsFillToBody() {
+ProductsFillToBody = () => {
 
     $.get(ProductsUrl, function (arr) {
         $.each(arr, function (index, value) {

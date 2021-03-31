@@ -1,5 +1,5 @@
 
-function AddCart(json, piece) {
+AddCart = (json, piece) => {
     if (localStorage.getItem(Cart) === null) {
         json.basket_piece = piece;
         localStorage.setItem(Cart, JSON.stringify([json]));
@@ -25,26 +25,26 @@ function AddCart(json, piece) {
 
 
 
-function RemoveCart(itemid) {
+RemoveCart = (itemid) => {
     var arr = ReadCart();
     var flag;
     $.each(arr, function (index, value) {
         if (value.id == itemid) {
             flag = index;
-            
+
         }
-       
+
     })
-    
-    
-    arr.splice(flag,1);
-    
+
+
+    arr.splice(flag, 1);
+
 
     localStorage.setItem(Cart, JSON.stringify(arr));
 
 }
 
-function CartCountChanger(itemid, operation) {
+CartCountChanger = (itemid, operation) => {
     var arr = ReadCart();
     var flag;
     $.each(arr, function (index, value) {
@@ -65,7 +65,7 @@ function CartCountChanger(itemid, operation) {
 }
 
 
-function TotalPriceCalculator() {
+TotalPriceCalculator = () => {
     var arr = ReadCart();
     var counter = 0;
     var totalcount = 0;
@@ -74,21 +74,21 @@ function TotalPriceCalculator() {
         totalcount = counter + totalcount;
     })
 
-return totalcount;
+    return totalcount;
 }
 
-function ReadCart() {
+ReadCart = () => {
     var arr = JSON.parse(localStorage.getItem(Cart));
     return arr;
 }
 
-function TotalPieceCalculator() {
+TotalPieceCalculator = () => {
     var arr = ReadCart();
-    
+
     var totalcount = 0;
     $.each(arr, function (index, value) {
-        totalcount = totalcount+=parseInt(value.basket_piece) 
-        
+        totalcount = totalcount += parseInt(value.basket_piece)
+
     })
     return totalcount;
 

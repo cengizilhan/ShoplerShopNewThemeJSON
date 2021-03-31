@@ -12,7 +12,7 @@ $(document).on('click', '#ProductRemove', function (e) {
     var id = $(this).attr('data-productid');
     //$(location).attr('href', './product_detail.html?productdetail='+id+'&')
     RemoveCart(id);
-    
+
 
     emptyCarts();
     FillCarts();
@@ -20,7 +20,7 @@ $(document).on('click', '#ProductRemove', function (e) {
 });
 $(document).on('click', '#IncreaseBtn', function (e) {
 
- 
+
     var val = $(this).parent().attr('data-productid');
     CartCountChanger(val, "+");
     FillCarts();
@@ -37,7 +37,7 @@ $(document).on('click', '#DecreaseBtn', function (e) {
 
 });
 
-function emptyCarts() {
+emptyCarts = () => {
     $("#tableOne").empty();
     var tablehader = `  <tr>
    <th>
@@ -53,7 +53,7 @@ function emptyCarts() {
     $(tablehader).appendTo("#tableOne");
 }
 
-function FillCarts() {
+FillCarts = () => {
     emptyCarts();
     var arr = ReadCart();
 

@@ -1,9 +1,9 @@
 var style = "vertical";
 var page = 1;
 var pagionationFlag = false;
-var minprice=0;
-var CatFilter=-1;
-var BrandFilter=null;
+var minprice = 0;
+var CatFilter = -1;
+var BrandFilter = null;
 
 $(document).ready(function () {
   style = "vertical";
@@ -17,38 +17,38 @@ $(document).ready(function () {
 })
 
 $(document).on('click', '#categoriesid div', function (e) {
-  
-  if($(this).hasClass('activecategory')) {
+
+  if ($(this).hasClass('activecategory')) {
     $(this).removeClass('activecategory');
-    CatFilter=-5;
+    CatFilter = -5;
     ShortBy(style, page, minprice, -5)
-  }else {
+  } else {
 
     $(this).siblings().removeClass('activecategory not:this');
-  
+
     $(this).addClass('activecategory');
-    
-    catid=$(this).attr('data-catid');
-    CatFilter=catid;
-  ShortBy(style, page, minprice, catid)
+
+    catid = $(this).attr('data-catid');
+    CatFilter = catid;
+    ShortBy(style, page, minprice, catid)
   }
 
- })
+})
 
-function CategoriesFilter() {
-  $.get(CategoriesUrl, function (arr) { 
+CategoriesFilter = () => {
+  $.get(CategoriesUrl, function (arr) {
 
     $('#categoriesid').empty();
     for (i = 0; i < arr.length; i++) {
-        
-        var htmlitem = ` <div data-catid=${arr[i].ID}> <a href="#">
+
+      var htmlitem = ` <div data-catid=${arr[i].ID}> <a href="#">
          <h6>${arr[i].CategoryName}</h6>
          </a> <span></span></div>`;
-        $(htmlitem).appendTo('#categoriesid');
-        
-      }
-     })
-  }
+      $(htmlitem).appendTo('#categoriesid');
+
+    }
+  })
+}
 
 
 $(document).on('change', '#ShortSelect', function (e) {
@@ -62,44 +62,44 @@ $(document).on('change', '#ShortSelect', function (e) {
 })
 
 $(document).on('click', '#brands div', function (e) {
-  
-  if($(this).hasClass('activecategory')) {
+
+  if ($(this).hasClass('activecategory')) {
     $(this).removeClass('activecategory');
-    
-    BrandFilter=null;
+
+    BrandFilter = null;
     ShortBy(style, page, minprice, CatFilter, BrandFilter)
-  }else {
+  } else {
 
     $(this).siblings().removeClass('activecategory not:this');
-  
+
     $(this).addClass('activecategory');
-    
-    BrandFilter=$(this).attr('data-brand');
-    
-    
-  ShortBy(style, page, minprice, CatFilter, BrandFilter)
-  BrandFilter=null;
+
+    BrandFilter = $(this).attr('data-brand');
+
+
+    ShortBy(style, page, minprice, CatFilter, BrandFilter)
+    BrandFilter = null;
   }
 
- })
+})
 
-function BrandCalculator(){
-  $.get(ProductsUrl, function (arr) {  
-    var BrandArr=[];
+BrandCalculator = () => {
+  $.get(ProductsUrl, function (arr) {
+    var BrandArr = [];
     $('#brands').empty();
-    $.each(arr, function (index, value) { 
+    $.each(arr, function (index, value) {
       if (!BrandArr.includes(value.brand)) {
         BrandArr.push(value.brand);
         var htmlitem = ` <div data-brand=${value.brand}> <a href="#">
         <h6>${value.brand}</h6>
         </a> <span></span></div>`;
-       $(htmlitem).appendTo('#brands');
-      } 
-      
+        $(htmlitem).appendTo('#brands');
+      }
 
-     
+
+
     })
-  
+
   })
 }
 
@@ -123,17 +123,17 @@ function PaginationButtonCreator(PageCount) {
 
 }
 
-function priceRange(){
+function priceRange() {
   //maxprice
-  $.get(ProductsUrl, function (arr) { 
+  $.get(ProductsUrl, function (arr) {
     arr.sort((a, b) => a.price < b.price ? 1 : -1);
-    var maxv=arr[0].price;
+    var maxv = arr[0].price;
     document.getElementById("customRange1").max = maxv;
   })
 
 }
 
-  
+
 
 function ShortBy(shorttype, page, minprice, CatFilter, BrandFilter) {
   $.get(ProductsUrl, function (arr) {
@@ -153,45 +153,42 @@ function ShortBy(shorttype, page, minprice, CatFilter, BrandFilter) {
         break;
       case "TitleZA":
         arr.sort((a, b) => a.title < b.title ? 1 : -1);
-        
+
         break;
       default: arr.sort((a, b) => a.title > b.title ? 1 : -1);
     }
 
-if (minprice>1)
-{  
-  var filteredArr=[];
-  for (var i=0;i<arr.length;i++){
-   arr[i].price>(minprice-1) ? filteredArr.push(arr[i]):false;      
-  }
-  arr=filteredArr;
-}
-if (CatFilter>=0)
-{  
+    if (minprice > 1) {
+      var filteredArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        arr[i].price > (minprice - 1) ? filteredArr.push(arr[i]) : false;
+      }
+      arr = filteredArr;
+    }
+    if (CatFilter >= 0) {
 
-  var filteredArr=[];
-  for (var i=0;i<arr.length;i++){
-   arr[i].category_id==CatFilter ? filteredArr.push(arr[i]):false;      
-  }
-  arr=filteredArr;
-  CatFilter=null;
-}
-if (BrandFilter!=null)
-{
-  var filteredArr=[];
-  for (var i=0;i<arr.length;i++){
-   arr[i].brand==BrandFilter ? filteredArr.push(arr[i]):false;      
-  }
-  arr=filteredArr;
-  BrandFilter=null;
+      var filteredArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        arr[i].category_id == CatFilter ? filteredArr.push(arr[i]) : false;
+      }
+      arr = filteredArr;
+      CatFilter = null;
+    }
+    if (BrandFilter != null) {
+      var filteredArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        arr[i].brand == BrandFilter ? filteredArr.push(arr[i]) : false;
+      }
+      arr = filteredArr;
+      BrandFilter = null;
 
-}
+    }
     console.log();
-    $('#itemscount').text(arr.length+' items');
+    $('#itemscount').text(arr.length + ' items');
 
     arr = Pagination(arr, page);
     FillProducts(arr, style);
-    
+
 
   })
 }
@@ -225,7 +222,7 @@ $(document).on('click', '#Paginationa', function (e) {
 $(document).on('click', '#FillVertical', function (e) {
   style = "vertical";
   var ShortBySelected = $("#ShortSelect option:selected").val();
-  ShortBy(ShortBySelected, 1, minprice,CatFilter);
+  ShortBy(ShortBySelected, 1, minprice, CatFilter);
   $("select option:selected").text();
   $(this).addClass('activeBtn');
   $('#FillHorizontal').removeClass('activeBtn');
@@ -234,7 +231,7 @@ $(document).on('click', '#FillVertical', function (e) {
 $(document).on('click', '#FillHorizontal', function (e) {
   style = "horizontal";
   var ShortBySelected = $("#ShortSelect option:selected").val();
-  ShortBy(ShortBySelected, 1, minprice,CatFilter);
+  ShortBy(ShortBySelected, 1, minprice, CatFilter);
   $(this).addClass('activeBtn');
   $('#FillVertical').removeClass('activeBtn');
 });
@@ -247,15 +244,15 @@ function Emptybody() {
 $(document).on('click', '#ProductCont', function (e) {
   var id = $(this).attr('data-productid');
   console.warn(id);
- 
-  window.location.href =  './product_detail.html?productdetail='+id+'&';
-  
+
+  window.location.href = './product_detail.html?productdetail=' + id + '&';
+
 });
 function FillProducts(arr, style) {
   Emptybody();
   $.each(arr, function (index, value) {
     var imgArr = value.image.split(",");
-    
+
     var htmlitemHorizontal = ` <div id="ProductCont" data-productid="${value.id}"  class="ProductLandContainer d-lg-flex flex-lg-row d-sm-flex flex-sm-column mt-5 pt-1">
     <div id="owlLandCont">
       <div class="owl-carousel owl-theme ProductOwlContainer">

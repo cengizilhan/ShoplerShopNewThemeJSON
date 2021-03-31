@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 })
 
-function SessionCheck()
+SessionCheck=()=>
 {
     let register = new Session();
     var bool=register.SessionCheck();

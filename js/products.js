@@ -2,7 +2,7 @@
 
 
 
-function BreadCrumber(categoryid, itemtitle) {
+BreadCrumber=(categoryid, itemtitle)=> {
 
     $.get(CategoriesUrl, function (arr) {
   
@@ -29,7 +29,7 @@ function BreadCrumber(categoryid, itemtitle) {
   }
 
   
-function CategoryFilter(CategoryId) {
+ CategoryFilter=(CategoryId)=> {
 
     $.get(ProductsUrl, function (arr) {
         var FilteredArr = $(arr).filter(function (index, value) {
@@ -45,10 +45,10 @@ function CategoryFilter(CategoryId) {
 
 }
 
-function GetCategories() {
+ GetCategories=()=> {
 
     $.get(CategoriesUrl, function (arr) {
-
+       
 
         $.each(arr, function (index, value) {
             var htmlitem = ` 
@@ -63,7 +63,7 @@ function GetCategories() {
 
 
 //url query function//
-function getAllUrlParams(url) {
+ getAllUrlParams=(url)=> {
 
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -127,7 +127,7 @@ function getAllUrlParams(url) {
 
     return obj;
 }
-function IndexOwlStarter() {
+ IndexOwlStarter=()=> {
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 35,

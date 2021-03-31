@@ -10,9 +10,9 @@ $(document).ready(function () {
 })
 //index.html onclick product//
 $(document).on('click', '#AddToCartBtn', function (e) {
-  
+
   var id = $(this).attr('data-productid');
-  var piece=$('#ProductCountValue').text();
+  var piece = $('#ProductCountValue').text();
   AddtoBasket(id, piece);
 
   swal("Ürün sepete eklendi!", {
@@ -26,18 +26,18 @@ $(document).on('click', '#AddToCartBtn', function (e) {
       defeat: false,
     },
   })
-  .then((value) => {
-    switch (value) {
-   
-     
-   
-      case "catch":
-        
-        window.location.replace('./cart.html');
-        break;
-   
-    }
-  });
+    .then((value) => {
+      switch (value) {
+
+
+
+        case "catch":
+
+          window.location.replace('./cart.html');
+          break;
+
+      }
+    });
 
 
 });
@@ -45,54 +45,54 @@ $(document).on('click', '#AddToCartBtn', function (e) {
 
 
 $(document).on('click', '#IncreaseBtn', function (e) {
-var val=$('#ProductCountValue').text();
-$('#ProductCountValue').text(++val);
+  var val = $('#ProductCountValue').text();
+  $('#ProductCountValue').text(++val);
 
 
 });
 $(document).on('click', '#DecreaseBtn', function (e) {
-  var val=$('#ProductCountValue').text();
-  val ==1 ? true:$('#ProductCountValue').text(--val);
-  
-  });
+  var val = $('#ProductCountValue').text();
+  val == 1 ? true : $('#ProductCountValue').text(--val);
+
+});
 
 
-  $(document).on('click', '#img1st', function (e) { 
-    var imgsrc=$('#img1st').attr('src');
-    $('#imgmain').attr('src',imgsrc);
-    $('#imgmain').attr('data-magnify-src',imgsrc);
-    $('#FancyIMG').attr('href',imgsrc);
-    zoomrefresh();
-  })
-  $(document).on('click', '#img2nd', function (e) { 
-    var imgsrc=$('#img2nd').attr('src');
-    $('#imgmain').attr('src',imgsrc);
-    $('#imgmain').attr('data-magnify-src',imgsrc);
-    $('#FancyIMG').attr('href',imgsrc);
-    zoomrefresh();
-  })
-  
-  $(document).on('click', '#img3rd', function (e) { 
-    var imgsrc=$('#img3rd').attr('src');
-    $('#imgmain').attr('src',imgsrc);
-    $('#imgmain').attr('data-magnify-src',imgsrc);
-    $('#FancyIMG').attr('href',imgsrc);
-    zoomrefresh();
-  })
-  
-function AddtoBasket(itemid, piece) {
+$(document).on('click', '#img1st', function (e) {
+  var imgsrc = $('#img1st').attr('src');
+  $('#imgmain').attr('src', imgsrc);
+  $('#imgmain').attr('data-magnify-src', imgsrc);
+  $('#FancyIMG').attr('href', imgsrc);
+  zoomrefresh();
+})
+$(document).on('click', '#img2nd', function (e) {
+  var imgsrc = $('#img2nd').attr('src');
+  $('#imgmain').attr('src', imgsrc);
+  $('#imgmain').attr('data-magnify-src', imgsrc);
+  $('#FancyIMG').attr('href', imgsrc);
+  zoomrefresh();
+})
+
+$(document).on('click', '#img3rd', function (e) {
+  var imgsrc = $('#img3rd').attr('src');
+  $('#imgmain').attr('src', imgsrc);
+  $('#imgmain').attr('data-magnify-src', imgsrc);
+  $('#FancyIMG').attr('href', imgsrc);
+  zoomrefresh();
+})
+
+AddtoBasket = (itemid, piece) => {
   $.get(ProductsUrl, function (arr) {
     $.each(arr, function (index, value) {
       if (value.id == itemid) {
-        AddCart(value,piece);
+        AddCart(value, piece);
       }
 
 
     });
-  })  
+  })
 }
 
-function collapseProductDetail() {
+collapseProductDetail = () => {
   $('#Collapse1').on('click', function (e) {
     var coll1 = $('#CollapseDiv1');
     var coll2 = $('#CollapseDiv2');
@@ -119,7 +119,7 @@ function collapseProductDetail() {
 
 }
 
-function ProductDetector() {
+ProductDetector = () => {
   var QueryStr = getAllUrlParams().productdetail;
   if (QueryStr != null) {
     ProductDetailFill(QueryStr);
@@ -131,7 +131,7 @@ function ProductDetector() {
 
 
 
-function ProductDetailFill(productid) {
+ProductDetailFill = (productid) => {
 
   $.get(ProductsUrl, function (arr) {
     $.each(arr, function (index, value) {
@@ -293,6 +293,6 @@ function ProductDetailFill(productid) {
 
 }
 
-function zoomrefresh(){
+zoomrefresh = () => {
   $('.zoom').magnify();
 }
