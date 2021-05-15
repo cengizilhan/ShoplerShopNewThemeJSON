@@ -77,6 +77,7 @@ AddItemToIndex = (arr) => {
         </div>`;
 
     $(htmlitem).appendTo(".ProductsContainer");
+    
     IndexOwlStarter();
 }
 

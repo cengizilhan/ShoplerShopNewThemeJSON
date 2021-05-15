@@ -229,7 +229,7 @@ ProductDetailFill = (productid) => {
                 <div class="RangeChanger"><button id="DecreaseBtn" ><i class="bi bi-dash"></i></button> <span
                     class="p-md-3 p-xl-3" id="ProductCountValue">1</span><button id="IncreaseBtn" ><i class="bi bi-plus"></i></button> </div>
                 <div class="">
-                  <button class="AddCart"  id="AddToCartBtn" data-productid="${value.id}"><i class="bi bi-cart3"></i> Add To Cart</button>
+                  <button class="AddCart"  id="AddToCartBtn" data-productid="${value.id}"><i class="bi bi-cart3"></i> Sepete Ekle</button>
                   <button class="AddCart"><i class="bi bi-heart"></i></button>
                 </div>
               </div>
@@ -247,8 +247,8 @@ ProductDetailFill = (productid) => {
           <div class="ProductBottom mt-5 p-sm-1 p-xl-4">
 
 
-          <button id="Collapse1" class="CollButton CollBtnHr">Product Information</button>
-          <button id="Collapse2" class="CollButton ">Reviews <span>0</span></button>
+          <button id="Collapse1" class="CollButton CollBtnHr">Ürün Bilgileri</button>
+          <button id="Collapse2" class="CollButton ">Değerlendirmeler <span>0</span></button>
 
           <hr class="CollHr">
 

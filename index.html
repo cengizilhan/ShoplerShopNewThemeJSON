@@ -50,28 +50,28 @@
 
           <div class="btn-group">
             <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              EN
+              TR
             </button>
             <ul class="dropdown-menu">
-              <a href="#">TR</a>
+              <a href="#">EN</a>
             </ul>
           </div>
 
         </div>
         <div class="d-inline TopRightBar float-end">
-          <a href="./profile.html"><span><i class="bi bi-person"></i> My Profile</span></a>
+          <a href="./profile.html"><span><i class="bi bi-person"></i> Hesabım</span></a>
           <a href="./cart.html"><span><i class="bi bi-basket"></i> <span id="pieceHolder">0 Items </span> <span class="Amount">$0.00</span></span></a>
 
 
 
           <span>
-            <div class="btn-group">
+            <div class="btn-group ">
               <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-search"></i>
               </button>
               <ul class="dropdown-menu">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Search</label>
+                  <label for="exampleInputEmail1" class="form-label">Ara</label>
                   <input type="text" class="form-control" id="SearchBx" aria-describedby="emailHelp">
                   <div id="SearchResults" class="form-text"></div>
                 </div>
@@ -107,25 +107,23 @@
                   KATEGORİLER
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="CategoryDropDown">
-                  <li><a class="dropdown-item" href="#">STORE</a></li>
+                  
                 
                 </ul>
               </li>
               
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">ANASAYFA</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./products.html">PRODUCTS</a>
+                <a class="nav-link" href="./products.html">ÜRÜNLER</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./login.html">LOGIN</a>
+                <a class="nav-link" href="./products.html?categoryid=10">KAMPANYALAR</a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link" href="./register.html">REGISTER</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./cart.html">CART</a>
+                <a class="nav-link" href="./cart.html">SEPETİM</a>
               </li>
 
             </ul>
@@ -138,9 +136,9 @@
   </section>
 
   <section class="CarouselContainer mt-2">
-    <div class="container-fluid GradidentBackGround">
-      <div class="container">
-        <div class="owl-carousel owl-theme BannerCarousel">
+    <div class="container-fluid GradidentBackGround ">
+      <div class="container d-flex align-items-center h-100" >
+        <div class="owl-carousel owl-theme BannerCarousel align-items-center d-flex h-100">
 
 
           <div class="item mx-auto" style="width: fit-content;">
@@ -199,6 +197,7 @@
       loop: true,
       margin: 10,
       nav: true,
+      dots:false,
 
       navText: [
         '<i class="bi bi-chevron-left"></i>',
@@ -248,7 +247,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat </p>
           <h4>$299</h4>
         </div>
-        <div><img class="mt-4" src="./imgs/carousel/50051823_540375.png"></div>
+        <div class="d-flex justify-content-center align-self-center " ><img src="./imgs/carousel/50051823_540375.png"></div>
 
 
       </div>
@@ -256,8 +255,8 @@
   </div>
 
 
-  <section class="Menu BestSeller mt-4 pt-5 pb-5">
-    <h2 id="bestSeller" class="text-center">BEST SELLER</h2>
+  <section class="Menu BestSeller pb-5">
+    <h2 id="bestSeller" class="text-center">EN ÇOK SATANLAR</h2>
     <div class="container" style="display:none;">
 
       <nav class="navbar navbar-expand-lg navbar-light ">
@@ -333,7 +332,7 @@
           <div class="col-12 col-sm-12 col-lg-6 mt-5">
             <h2 class="pt-5 pb-2">iPhone 6 Plus</h2>
             <p>Performence and design. Taken right to the edge.</p>
-            <h5 class="pt-4">SKIP NOW</h5>
+            <h5 class="pt-4">ŞİMDİ ATLA</h5>
           </div>
 
           <div class="col-12 col-sm-12 col-lg-6 mt-5">
@@ -349,21 +348,21 @@
       <div class="d-flex flex-wrap flex-md-nowrap justify-content-evenly text-center">
         <div class=" p-1 ">
           <i class="bi bi-truck "></i>
-          <h4>FREE SHIPPINGs</h4>
+          <h4>ÜCRETSİZ KARGO</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore iusto placeat obcaecati! Animi est optio
             similique nesciunt quaerat facilis aperiam praesentium, molestias natus debitis voluptate velit ex minima
             recusandae eius.</p>
         </div>
         <div class=" p-1">
           <i class="bi bi-wallet2"></i>
-          <h4>100% REFUND</h4>
+          <h4>100% GERİ ÖDEME</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore iusto placeat obcaecati! Animi est optio
             similique nesciunt quaerat facilis aperiam praesentium, molestias natus debitis voluptate velit ex minima
             recusandae eius.</p>
         </div>
         <div class=" p-1">
           <i class="bi bi-headset"></i>
-          <h4>SUPPORT</h4>
+          <h4>DESTEK</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore iusto placeat obcaecati! Animi est optio
             similique nesciunt quaerat facilis aperiam praesentium, molestias natus debitis voluptate velit ex minima
             recusandae eius.</p>
@@ -378,7 +377,7 @@
         <input type="text" id="SearchBx2" class="form-control" placeholder="Search Query" aria-label="Search query"
           aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-primary p-3" type="button">Search</button>
+          <button class="btn btn-primary p-3" type="button">Ara</button>
           
         </div><br>
         
@@ -398,16 +397,16 @@
           incidunt dignissimos!</p>
       </div>
       <div>
-        <h5 class="pb-2">Follow Us</h5>
+        <h5 class="pb-2">Takip Et</h5>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, delectus necessitatibus, ratione facere sunt
           </p>
           <i class="bi bi-facebook"></i><i class="bi bi-twitter"></i>
 
       </div>
       <div>
-        <h5 class="pb-2">Contact Us</h5>
-        <p>My Company, 4578 Marmora Road, Glasgow D04 79GR<br>
-        Call us now: 0123-456-789<br>
+        <h5 class="pb-2">İletişim</h5>
+        <p>Bouncer, 4578 Marmora Road, Glasgow D04 79GR<br>
+        Arayın: 0123-456-789<br>
         email:support@whatever.com
           </p>
         
@@ -423,46 +422,46 @@
 
     <div class="d-flex flex-wrap flex-md-nowrap justify-content-between text-left ">
       <div>
-        <h5>Information</h5>
-        <h6>About Us</h6>
-        <h6>Information</h6>
-        <h6>Privacy Policy</h6>
-        <h6>Terms & Conditions</h6>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
       <div>
-        <h5>Service</h5>
-        <h6>About Us</h6>
-        <h6>Information</h6>
-        <h6>Privacy Policy</h6>
-        <h6>Terms & Conditions</h6>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
       <div>
-        <h5>Extras</h5>
-        <h6>About Us</h6>
-        <h6>Information</h6>
-        <h6>Privacy Policy</h6>
-        <h6>Terms & Conditions</h6>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
       <div>
-        <h5>My Account</h5>
-        <h6>About Us</h6>
-        <h6>Information</h6>
-        <h6>Privacy Policy</h6>
-        <h6>Terms & Conditions</h6>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
       <div>
-        <h5>Userful Links</h5>
-        <h6>About Us</h6>
-        <h6>Information</h6>
-        <h6>Privacy Policy</h6>
-        <h6>Terms & Conditions</h6>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
       <div>
-        <h5>Our Offers</h5>
-        <h6>About Us</h6>
-        <h6>Information</h6>
-        <h6>Privacy Policy</h6>
-        <h6>Terms & Conditions</h6>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
 
     </div>

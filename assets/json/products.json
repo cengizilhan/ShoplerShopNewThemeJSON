@@ -144,6 +144,29 @@
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "category_id": 1,
     "image": "./imgs/products/parfum.png,./imgs/products/parfum2.jpg,./imgs/products/parfum3.jpg"
+  },
+  {
+    "id": 13,
+    "basket_piece":1,
+    "product_code":"PAR 132",
+    "brand":"Boss",
+    "title": "Parfüm",
+    "price": 2300,
+    "isFreeCargo":true,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 10,
+    "image": "./imgs/products/parfum.png,./imgs/products/parfum2.jpg,./imgs/products/parfum3.jpg"
+  },{
+    "id": 14,
+    "basket_piece":1,
+    "product_code":"MATK 645",
+    "brand":"Okh",
+    "title": "Matkap",
+    "price": 2300,
+    "isFreeCargo":false,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category_id": 10,
+    "image": "./imgs/products/matkap.png,./imgs/products/matkap2.jpg,./imgs/products/matkap3.jpg"
   }
   
   

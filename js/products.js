@@ -2,34 +2,34 @@
 
 
 
-BreadCrumber=(categoryid, itemtitle)=> {
+BreadCrumber = (categoryid, itemtitle) => {
 
     $.get(CategoriesUrl, function (arr) {
-  
-      $.each(arr, function (index, value) {
-        if (categoryid==value.ID){
-         
-    var breadcrumbitem = `
+
+        $.each(arr, function (index, value) {
+            if (categoryid == value.ID) {
+
+                var breadcrumbitem = `
     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
     <li class="breadcrumb-item"><a href="${value.link}">${value.CategoryName}</a></li>
     <li class="breadcrumb-item active" aria-current="page><a href="${value.link}">${itemtitle}</a></li>
     
     `;
-    $('#breadcrumb').empty();
-    $(breadcrumbitem).appendTo('#breadcrumb');
-  
-        }
-        
-      });
-    });
-  
-  
-  
-  
-  }
+                $('#breadcrumb').empty();
+                $(breadcrumbitem).appendTo('#breadcrumb');
 
-  
- CategoryFilter=(CategoryId)=> {
+            }
+
+        });
+    });
+
+
+
+
+}
+
+// after click the category on nav> filter function//
+CategoryFilter = (CategoryId) => {
 
     $.get(ProductsUrl, function (arr) {
         var FilteredArr = $(arr).filter(function (index, value) {
@@ -45,14 +45,16 @@ BreadCrumber=(categoryid, itemtitle)=> {
 
 }
 
- GetCategories=()=> {
+
+GetCategories = () => {
 
     $.get(CategoriesUrl, function (arr) {
-       
+
 
         $.each(arr, function (index, value) {
+
             var htmlitem = ` 
-            <li><a class="dropdown-item" data-catid="${value.ID}" href="${value.link}&">${value.CategoryName}</a></li>`;
+            <li><a class="dropdown-item" data-catid="${value.ID}" href="${value.link}&">${value.CategoryName.toUpperCase()}</a></li>`;
             $(htmlitem).appendTo('#CategoryDropDown');
         });
     })
@@ -63,7 +65,7 @@ BreadCrumber=(categoryid, itemtitle)=> {
 
 
 //url query function//
- getAllUrlParams=(url)=> {
+getAllUrlParams = (url) => {
 
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -127,7 +129,7 @@ BreadCrumber=(categoryid, itemtitle)=> {
 
     return obj;
 }
- IndexOwlStarter=()=> {
+IndexOwlStarter = () => {
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 35,

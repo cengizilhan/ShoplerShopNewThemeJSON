@@ -37,28 +37,28 @@
 
           <div class="btn-group">
             <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              EN
+              TR
             </button>
             <ul class="dropdown-menu">
-              <a href="#">TR</a>
+              <a href="#">EN</a>
             </ul>
           </div>
 
         </div>
         <div class="d-inline TopRightBar float-end">
-          <a href="./profile.html"><span><i class="bi bi-person"></i> My Profile</span></a>
+          <a href="./profile.html"><span><i class="bi bi-person"></i> Hesabım</span></a>
           <a href="./cart.html"><span><i class="bi bi-basket"></i> <span id="pieceHolder">0 Items </span> <span class="Amount">$0.00</span></span></a>
 
 
 
           <span>
-            <div class="btn-group">
+            <div class="btn-group ">
               <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-search"></i>
               </button>
               <ul class="dropdown-menu">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Search</label>
+                  <label for="exampleInputEmail1" class="form-label">Ara</label>
                   <input type="text" class="form-control" id="SearchBx" aria-describedby="emailHelp">
                   <div id="SearchResults" class="form-text"></div>
                 </div>
@@ -73,6 +73,8 @@
       </div>
     </div>
   </section>
+
+
   <section class="Menu mt-4">
     <a href="./index.html"><h2 class="text-center">BOUNCER</h2></a>
     <div class="container">
@@ -92,24 +94,23 @@
                   KATEGORİLER
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="CategoryDropDown">
-                  <li><a class="dropdown-item" href="#">STORE</a></li>
+                  
                 
                 </ul>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">ANASAYFA</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./products.html">PRODUCTS</a>
+                <a class="nav-link" href="./products.html">ÜRÜNLER</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./login.html">LOGIN</a>
+                <a class="nav-link" href="./products.html?categoryid=10">KAMPANYALAR</a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link" href="./register.html">REGISTER</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./cart.html">CART</a>
+                <a class="nav-link" href="./cart.html">SEPETİM</a>
               </li>
 
             </ul>
@@ -139,9 +140,9 @@
   <section class="MainContainer mt-5">
     <div class="container d-lg-flex flex-lg-row justify-content-lg-between d-sm-flex flex-sm-column">
       <div class="FilterDiv ">
-        <div class="categories p-3">
+        <div class="categories p-4">
 
-          <h5>CATEGORIES</h5>
+          <h5>KATEGORİLER</h5>
           <div id="categoriesid">
           <div> <a href="#">
               <h6>Apple Car</h6>
@@ -169,9 +170,9 @@
         </div>
 
 
-        <div class="PricesDiv p-3 mt-4">
-          <h5>PRICES</h5>
-          <label for="customRange1" class="form-label">Minimum price</label>
+        <div class="PricesDiv p-4 mt-4">
+          <h5>FİYAT</h5>
+          <label for="customRange1" class="form-label">Minimum fiyat</label>
           <input type="range" min="1" max="100" class="form-range" id="customRange1">
           <p id="rangesult"></p>
           <script>
@@ -219,9 +220,9 @@ $('#customRange1').on('focusout', function () {
         </div>
 
 
-        <div  class="categories p-3 mt-4">
+        <div  class="categories p-4 mt-4">
 
-          <h5>BRANDS</h5>
+          <h5>MARKALAR</h5>
           <div id="brands">
           <div> <a href="#">
               <h6>Apple</h6>
@@ -236,29 +237,20 @@ $('#customRange1').on('focusout', function () {
       <div class="ProductCont flex-grow-1">
 
         <div class="container">
-          <div class="ProductBanner p-5 d-lg-flex flex-lg-row d-sm-flex flex-sm-column">
-            <div>
-              <h2 class="pt-5 pb-2">iPhone 8</h2>
-              <p>Performence and design. Taken right to the edge.</p>
-              <h5 class="pt-4">SHOP NOW</h5>
-            </div>
-            <div>
-              <img class="img-fluid" src="./imgs/carousel/iphone8.png">
-            </div>
-          </div>
+         
 
 
-          <div class="FilterBar mt-3 p-4 d-flex justify-content-between">
+          <div class="FilterBar mt-5 mt-xl-0 mt-md-0 pt-sm-5 p-4 d-flex justify-content-between">
             <div class="left">
-              <span id="itemscount">13 Items </span>
+              <span id="itemscount">13 ürün </span>
               <span>
-                <label for="cars">Sort By:</label>
+                <label for="cars">Sıralama:</label>
                 <select id="ShortSelect" class="custom-select">
-                  <option selected>Default</option>
-                  <option value="Price19">Price Low To High</option>
-                  <option value="Price91">Price High To Low</option>
-                  <option value="TitleAZ">Name A-Z</option>
-                  <option value="TitleZA">Name Z-A</option>
+                  <option selected>Varsayılan</option>
+                  <option value="Price19">Artan Fiyat</option>
+                  <option value="Price91">Azalan Fiyat</option>
+                  <option value="TitleAZ">İsim A-Z</option>
+                  <option value="TitleZA">İsim Z-A</option>
                 </select>
               </span>
 <!--
@@ -369,25 +361,25 @@ $('#customRange1').on('focusout', function () {
   <section class="Bottom">
     <div class="container mt-5 pt-5 d-flex flex-wrap flex-md-nowrap justify-content-between text-left">
       <div>
-        <h4 class="pb-2">BOUNCER</h4>
+        <h4 class="pb-2">BOUNCER</h4 >
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, delectus necessitatibus, ratione facere sunt
           minima assumenda dolor earum reiciendis quasi exercitationem saepe cum. Voluptatibus sit itaque veritatis in
           incidunt dignissimos!</p>
       </div>
       <div>
-        <h5 class="pb-2">Follow Us</h5>
+        <h5 class="pb-2">Takip Et</h5>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, delectus necessitatibus, ratione facere sunt
-        </p>
-        <i class="bi bi-facebook"></i><i class="bi bi-twitter"></i>
+          </p>
+          <i class="bi bi-facebook"></i><i class="bi bi-twitter"></i>
 
       </div>
       <div>
-        <h5 class="pb-2">Contact Us</h5>
-        <p>My Company, 4578 Marmora Road, Glasgow D04 79GR<br>
-          Call us now: 0123-456-789<br>
-          email:support@whatever.com
-        </p>
-
+        <h5 class="pb-2">İletişim</h5>
+        <p>Bouncer, 4578 Marmora Road, Glasgow D04 79GR<br>
+        Arayın: 0123-456-789<br>
+        email:support@whatever.com
+          </p>
+        
 
       </div>
     </div>
@@ -395,72 +387,72 @@ $('#customRange1').on('focusout', function () {
   </section>
 
   <section class="BottomLinks">
-    <div class="container">
-      <hr class="mt-5 mb-5">
+  <div class="container">
+    <hr class="mt-5 mb-5">
 
-      <div class="d-flex flex-wrap flex-md-nowrap justify-content-between text-left ">
-        <div>
-          <h5>Information</h5>
-          <h6>About Us</h6>
-          <h6>Information</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Terms & Conditions</h6>
-        </div>
-        <div>
-          <h5>Service</h5>
-          <h6>About Us</h6>
-          <h6>Information</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Terms & Conditions</h6>
-        </div>
-        <div>
-          <h5>Extras</h5>
-          <h6>About Us</h6>
-          <h6>Information</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Terms & Conditions</h6>
-        </div>
-        <div>
-          <h5>My Account</h5>
-          <h6>About Us</h6>
-          <h6>Information</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Terms & Conditions</h6>
-        </div>
-        <div>
-          <h5>Userful Links</h5>
-          <h6>About Us</h6>
-          <h6>Information</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Terms & Conditions</h6>
-        </div>
-        <div>
-          <h5>Our Offers</h5>
-          <h6>About Us</h6>
-          <h6>Information</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Terms & Conditions</h6>
-        </div>
-
+    <div class="d-flex flex-wrap flex-md-nowrap justify-content-between text-left ">
+      <div>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
-    </div>
-
-  </section>
-  <hr class="mt-5 mb-5">
-
-  <section class="signature">
-    <div class="container">
-      <div class="d-flex justify-content-between mb-3 flex-wrap flex-md-nowrap ">
-        <div>2018 Ecommerce theme By www.bisenbaev.com - sawacrow </div>
-        <div>
-          <img src="./imgs/icons/015-mastercard.png">
-          <img src="./imgs/icons/016-western-union.png">
-          <img src="./imgs/icons/017-paypal.png">
-          <img src="./imgs/icons/018-visa.png">
-        </div>
+      <div>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
       </div>
+      <div>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
+      </div>
+      <div>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
+      </div>
+      <div>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
+      </div>
+      <div>
+        <h5>Tekliflerimiz</h5>
+        <h6>Hakkımızda</h6>
+        <h6>Bilgilendirme</h6>
+        <h6>Gizlilik</h6>
+        <h6>Şartlar ve Koşullar</h6>
+      </div>
+
     </div>
-  </section>
+  </div>
+  
+</section>
+<hr class="mt-5 mb-5">
+
+<section class="signature">
+  <div class="container">
+  <div class="d-flex justify-content-between mb-3 flex-wrap flex-md-nowrap ">
+    <div>2018 Ecommerce theme By www.bisenbaev.com - sawacrow </div>
+    <div>
+      <img src="./imgs/icons/015-mastercard.png">
+      <img src="./imgs/icons/016-western-union.png">
+      <img src="./imgs/icons/017-paypal.png">
+      <img src="./imgs/icons/018-visa.png">
+    </div>
+  </div>
+</div>
+</section>
 
 
   <!-- Optional JavaScript; choose one of the two! -->

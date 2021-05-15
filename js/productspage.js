@@ -13,8 +13,29 @@ $(document).ready(function () {
   priceRange();
   CategoriesFilter();
   BrandCalculator();
+  
+   
+UrlParamCategoryReader();
+  
 
 })
+
+
+
+
+
+UrlParamCategoryReader = () => {
+  var QueryCategory = getAllUrlParams().categoryid;
+  //var QueryBrand= getAllUrlParams().brands;
+  if (QueryCategory != null) {
+    //$('#categoriesid > [data-catid="'+QueryCategory+'"] ').remove();
+  CatFilter=QueryCategory;
+  ShortBy(style, page, minprice, CatFilter);
+  }
+  
+
+}
+
 
 $(document).on('click', '#categoriesid div', function (e) {
 
@@ -184,7 +205,7 @@ function ShortBy(shorttype, page, minprice, CatFilter, BrandFilter) {
 
     }
     console.log();
-    $('#itemscount').text(arr.length + ' items');
+    $('#itemscount').text(arr.length + ' ürün');
 
     arr = Pagination(arr, page);
     FillProducts(arr, style);
@@ -278,7 +299,7 @@ function FillProducts(arr, style) {
         </div>
       </div>
       <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum architecto sequi, doloremque fugit temporibus ullam provident </div>
-      <div class="mt-3"><button class="AddCart" id="AddToCartBtn" data-productid="2"><i class="bi bi-cart3"></i> Add To Cart</button>
+      <div class="mt-3"><button class="AddCart" id="AddToCartBtn" data-productid="2"><i class="bi bi-cart3"></i> Sepete Ekle</button>
         <button class="AddCart"><i class="bi bi-heart"></i></button></div>
 
     </div>

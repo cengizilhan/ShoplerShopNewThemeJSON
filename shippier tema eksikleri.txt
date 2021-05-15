@@ -1,0 +1,16 @@
+* - Slider resim yüksekliği psd de olduğu şekilde olacak
+* - Açılır menü Kategoriler kelimesinin K harfinden itibaren olmalı, menu fonto kontrol edilmeli, kategori isimleri büyük harfle olabilir.
+* - Slider altındaki BEST SEller kısmının üstten boşluğu XD Dosyasındaki gibi olacak
+* - Resim boyutları-ürün listesi ve ürün detayda oranları doğru hale getirilerek yapılacak
+* - Sitedeki türkçe ve ingilizce dil karmaşası çözülecek / Türkkçe Diline Çevrilecek.
+* - Soldaki kategoriler menüsündeki kategori ve altındaki markaların satır yükseklikleri xd deki gibi olacak:
+* - Ürün detay boyutları satır yükseklikleri, buton genişlikleri xd deki gibi olacak.
+* - Sepete eklendi popup ı butonları eşit boyut ve metin ortalı olacak.
+* - Sepet sayfasındaki ürün adı sola dayalı olacak, Product,Price,SQT gibi başlıkların altındaki çizgiye uzaklaştırılacak biraz.
+* - Sepet sayfasında kupon ve subtotal kısımlarının başlangıç hizzalamaları ve subtotal bölümü satır yükselikleri düzeltilecek
+* - Search icon sağ üstteki, width arttırılacak MyProfile kısmından başlayacak 
+* - kategori isimleri büyük harfle olabilir.
+* - Kategorilerden birine tıklayınca Products menüsündeki şablon çıksın. Soldan aktegoriye tıklayınca sağda ürünler gösterilsin. Üstte görünen slider kategori sayfasında olmasın.
+* - MyProfile yerine Üye Giriş / Kayıt linki olacak eğer üye girişi yapılmış ise Profilim yazabilir.
+* - Menü : Ana sayfa, Ürünler, Kampanyalar(Böyle bir kategori açılıp, içine ürün eklenip bunun linki koyulacak.) , Bize Ulaşın
+

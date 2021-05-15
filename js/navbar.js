@@ -1,6 +1,15 @@
 $(document).ready(function () {
     PriceFill();
+    ProfileSessionCheck();
+
 });
+
+ProfileSessionCheck = () => {
+    const htmlProfileSel = '.TopRightBar a:nth-child(1)';
+    const htmlLogin = `<span><i class="bi bi-person"></i>Giriş Yap</span>`;
+    sessionStorage.getItem(SessionID) == null ? $(htmlProfileSel).attr("href", "./login.html").html(htmlLogin) : false;
+}
+
 
 $(document).on('keyup', '#SearchBx', function () {
     var timeout = null
@@ -13,7 +22,7 @@ $(document).on('keyup', '#SearchBx', function () {
 
 
 
- SearchBox=(querystr)=> {
+SearchBox = (querystr) => {
 
     var arr = ReadCart();
     var regex = new RegExp(querystr, "i");
@@ -34,7 +43,7 @@ $(document).on('keyup', '#SearchBx', function () {
 }
 
 
- PriceFill=()=> {
+PriceFill = () => {
     var price = TotalPriceCalculator();
     $('.Amount').text('$' + price);
 
