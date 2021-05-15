@@ -15,6 +15,10 @@ Ortamda API yok, veriler JSON dosyasından geliyor ve localstorage üzerinde tut
 XD Teması: Bouncer – Ecommerce Free XD UI kit - Almaz Bisenbaev
 https://www.behance.net/gallery/77037027/Bouncer-Ecommerce-UI-Kit-Adobe-XD
 
+Canlı incelemek için 
+1) https://sawacrow.github.io/ShoplerShopNewThemeJSON/
+2) https://cebraililhan.com/shoplershopnewtheme/
+
 
 Kullanılan eklentiler
 1) Magnify Master
