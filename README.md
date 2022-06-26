@@ -17,7 +17,7 @@ https://www.behance.net/gallery/77037027/Bouncer-Ecommerce-UI-Kit-Adobe-XD
 
 Canlı incelemek için 
 1) https://sawacrow.github.io/ShoplerShopNewThemeJSON/
-2) https://cebraililhan.com/shoplershopnewtheme/
+2) https://cengizilhan.com/shoplershopnewtheme/
 
 
 Kullanılan eklentiler
