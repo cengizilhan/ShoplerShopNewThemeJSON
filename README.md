@@ -1,5 +1,7 @@
 # ShoplerShopNewTheme
 
+![alt text](./ss.jpg)
+
 ShoplerShopV.1.0
 
 XD'den Bootstrap ile HTML ortamına aktarıldı.
